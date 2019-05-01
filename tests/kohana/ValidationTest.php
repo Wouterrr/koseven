@@ -440,8 +440,8 @@ class Kohana_ValidationTest extends Unittest_TestCase
 	{
 		$validation = Validation::factory($data);
 
-		$current = i18n::lang();
-		i18n::lang('es');
+		$current = I18n::lang();
+		I18n::lang('es');
 
 		foreach ($rules as $field => $field_rules)
 		{
@@ -455,7 +455,7 @@ class Kohana_ValidationTest extends Unittest_TestCase
 		$result_3 = $validation->errors('Validation', FALSE);
 
 		// Restore the current language
-		i18n::lang($current);
+		I18n::lang($current);
 
 		$this->assertSame($translated_expected, $result_1);
 		$this->assertSame($translated_expected, $result_2);
@@ -474,8 +474,8 @@ class Kohana_ValidationTest extends Unittest_TestCase
 			->rule('foo', 'equals', [':value', 'something'])
 			->label('something', 'Spanish');
 
-		$current = i18n::lang();
-		i18n::lang('es');
+		$current = I18n::lang();
+		I18n::lang('es');
 
 		$validation->check();
 
@@ -487,7 +487,7 @@ class Kohana_ValidationTest extends Unittest_TestCase
 		$result_3 = $validation->errors('Validation', FALSE);
 
 		// Restore the current language
-		i18n::lang($current);
+		I18n::lang($current);
 
 		$this->assertSame($translated_expected, $result_1);
 		$this->assertSame($translated_expected, $result_2);

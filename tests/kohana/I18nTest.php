@@ -70,7 +70,7 @@ class Kohana_I18nTest extends Unittest_TestCase {
 	}
 
 	/**
-	 * Tests i18n::get()
+	 * Tests I18n::get()
 	 *
 	 * @test
 	 * @dataProvider provider_get
